@@ -1,0 +1,28 @@
+/* This is the style sheet for GIT 480 Senior Project by Antonio Rodriguez Jr */
+@layer reset, base, layout, components, utilities, overrides;
+
+@layer reset{
+
+}
+
+@layer base{
+    :root {
+
+    }
+}
+
+@layer layout{
+
+}
+
+@layer components{
+
+}
+
+@layer utilities{
+
+}
+
+@layer overrides{
+
+}
