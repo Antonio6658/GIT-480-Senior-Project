@@ -2,7 +2,21 @@
 @layer reset, base, layout, components, utilities, overrides;
 
 @layer reset{
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
+    body{
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    img{
+        display: block;
+        max-width: 100%;
+    }
 }
 
 @layer base{
