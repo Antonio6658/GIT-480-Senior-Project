@@ -28,10 +28,21 @@
         --card-color: #ffffff;
         --font-text: #2d2d2d;
 
-        --heading: 'Futura', 'Trebuchet MS', Arial, sans-serif;
+        --heading: 'Montserrat', 'Trebuchet MS', Arial, sans-serif;
         --font-family: Arial, sans-serif;
 
         /* add spacing, sizing for fonts, measure, box shadows, borders, other colors */
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--font-text);
+        font-family: var(--font-family);
+    }
+
+    h1, h2, h3 {
+        font-family: var(--heading);
+        color: var(--primary);
     }
 }
 
@@ -41,6 +52,7 @@
 
 @layer components{
     /* cards styles and other reuseable components */
+   
 }
 
 @layer utilities{
