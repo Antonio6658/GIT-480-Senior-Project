@@ -21,7 +21,15 @@
 
 @layer base{
     :root {
+        --primary: #2d5a27;
+        --accent: #8fa882;
+        --other-accent: #c87a53;
+        --background: #faf7f2;
+        --card-color: #ffffff;
+        --font-text: #2d2d2d;
 
+        --heading: 'Futura', 'Trebuchet MS', Arial, sans-serif;
+        --font-family: Arial, sans-serif;
     }
 }
 
