@@ -30,21 +30,27 @@
 
         --heading: 'Futura', 'Trebuchet MS', Arial, sans-serif;
         --font-family: Arial, sans-serif;
+
+        /* add spacing, sizing for fonts, measure, box shadows, borders, other colors */
     }
 }
 
 @layer layout{
-
+    /* grids and other unique layout choices. */
 }
 
 @layer components{
-
+    /* cards styles and other reuseable components */
 }
 
 @layer utilities{
-
+    /* add low level classes for one job with high priority */
 }
 
 @layer overrides{
-
+    /* to check layout issues */
+    /* *{
+        outline: 1px solid rgba(255,0,0,0.4) !important;
+    } */
 }
+
