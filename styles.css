@@ -51,6 +51,16 @@
     /* to check layout issues */
     /* *{
         outline: 1px solid rgba(255,0,0,0.4) !important;
-    } */
+    }
+    to check image spacing with nearby text
+        img{
+            opacity: 0.5 !important
+  }
+
+    to test for contrast and readability
+        body, body *{
+            color: #000 !important;
+            background-color: #fff !important;
+  } */
 }
 
