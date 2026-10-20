@@ -22,8 +22,8 @@
 @layer base{
     :root {
         --primary: #2d5a27;
-        --accent: #8fa882;
-        --other-accent: #c87a53;
+        --accent: #843E3E;
+        --other-accent: #d49b35;
         --background: #faf7f2;
         --card-color: #ffffff;
         --font-text: #2d2d2d;
@@ -37,9 +37,9 @@
         --space-md: clamp(1rem, 0.85rem + 0.75vw, 1.5rem);
         --space-lg: clamp(1.5rem, 1.35rem + 1vw, 2rem);
 
-        --measure: 68ch;
+        --measure: 80ch;
 
-        --border: 1px solid var(var(--accent));
+        --border: 1px solid var(--accent);
 
         --box-shadow: 0 2px 8px rgba(0,0,0, 0.2);
     }
@@ -57,11 +57,61 @@
     h1, h2, h3 {
         font-family: var(--heading);
         color: var(--primary);
+        font-weight: bold;
+        margin-block-end: var(--space-sm);
+        line-height: 1.2;
+    }
+
+    a{
+        font-weight: bold;
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    p{
+        max-inline-size: var(--measure);
+        margin-bottom: var(--space-md);
+    }
+   
+    .site-logo{
+        font-family: var(--heading);
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--primary);
     }
 }
 
 @layer layout{
     /* grids and other unique layout choices. */
+    header{
+        border-bottom: var(--border);
+        background-color: var(--background);
+        position: sticky;
+        top: 0;
+ 
+    }
+
+    .nav-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-block: 1rem 2rem;
+    }
+
+    .nav-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: var(--space-lg);
+        list-style: none;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .nav-list a{
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: bold;
+    }
 }
 
 @layer components{
