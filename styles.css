@@ -32,9 +32,23 @@
         --font-family: Arial, sans-serif;
 
         /* add spacing, sizing for fonts, measure, box shadows, borders, other colors */
+
+        --space-sm: clamp(0.75rem, 0.65rem + 0.5vw, 1rem);
+        --space-md: clamp(1rem, 0.85rem + 0.75vw, 1.5rem);
+        --space-lg: clamp(1.5rem, 1.35rem + 1vw, 2rem);
+
+        --measure: 68ch;
+
+        --border: 1px solid var(var(--accent));
+
+        --box-shadow: 0 2px 8px rgba(0,0,0, 0.2);
     }
 
     body {
+        max-inline-size: 1280px;
+        margin-inline: auto;
+        font-size: 1rem;
+        line-height: 1.6;
         background-color: var(--background);
         color: var(--font-text);
         font-family: var(--font-family);
