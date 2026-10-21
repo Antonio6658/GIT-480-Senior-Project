@@ -92,9 +92,10 @@
     }
 
     .nav-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-block: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-md) var(--space-lg);
     }
 
     .nav-list{
@@ -112,6 +113,21 @@
         color: var(--primary);
         font-weight: bold;
     }
+
+    main{
+        max-inline-size: 120ch;
+        margin-inline: auto;
+        padding: var(--space-lg);
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        padding-block: 1rem;
+        border-top: var(--border);
+        font-style: italic;
+    }
+
 }
 
 @layer components{
@@ -124,8 +140,8 @@
    }
 
    .trending{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
    }
 }
 
