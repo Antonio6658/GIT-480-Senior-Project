@@ -120,6 +120,20 @@
         padding: var(--space-lg);
     }
 
+    .search-bar{
+        display: flex;
+        gap: var(--space-sm);
+        max-inline-size: 600px;
+        margin-block-end: var(--space-lg);
+    }
+
+    .trending{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: var(--space-md);
+        margin-block-end: var(--space-lg);
+   }
+
     footer{
         display: flex;
         justify-content: center;
@@ -171,11 +185,6 @@
         align-self: flex-start;
    }
 
-   .trending{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-   }
-
    #category{
         font-family: var(--font-family);
         padding: 0.5rem;
@@ -194,6 +203,12 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
+   }
+
+
+   .search-bar input[type="text"]{
+    flex: 1;
+    border-radius: 4px;
    }
 }
 
