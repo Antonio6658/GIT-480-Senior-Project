@@ -160,20 +160,40 @@
    }
 
    button{
-    font-family: var(heading);
-    font-weight: bold;
-    background-color: var(--primary);
-    color: var(--card-color);
-    border: none;
-    padding: var(--space-sm) var(--space-md);
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: flex-start;
+        font-family: var(heading);
+        font-weight: bold;
+        background-color: var(--primary);
+        color: var(--card-color);
+        border: none;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: flex-start;
    }
 
    .trending{
         display: grid;
         grid-template-columns: 1fr 1fr;
+   }
+
+   #category{
+        font-family: var(--font-family);
+        padding: 0.5rem;
+        border: var(--border);
+        font-size: 1rem;
+        background-color: var(--card-color);
+        cursor: pointer;
+   }
+
+   .blog{
+        background-color: var(--card-color);
+        padding: var(--space-lg);
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        margin-bottom: var(--space-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
    }
 }
 
