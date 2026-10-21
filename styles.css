@@ -132,11 +132,25 @@
 
 @layer components{
     /* cards styles and other reuseable components */
+    .settings, .inbox{
+        background-color: var(--card-color);
+        padding: var(--space-lg);
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        margin-block-end: var(--space-lg);
+    }
+
     .settings form, .inbox form{
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
+   }
+
+   input[type="text"], textarea{
+        font-family: var(--font-family);
+        padding: var(--space-sm);
         border: var(--border);
+        font-size: 1rem;
    }
 
    .trending{
