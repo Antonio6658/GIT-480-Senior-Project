@@ -161,20 +161,20 @@
         gap: var(--space-sm);
    }
 
-   input[type="text"], textarea{
+    input[type="text"], textarea{
         font-family: var(--font-family);
         padding: var(--space-sm);
         border: var(--border);
         font-size: 1rem;
    }
 
-   label{
+    label{
         font-family: var(--heading);
         font-weight: bold;
         margin-block-end: -0.5rem;
    }
 
-   .button, button{
+    .button, button{
         font-family: var(heading);
         font-weight: bold;
         background-color: var(--primary);
@@ -186,7 +186,7 @@
         align-self: flex-start;
    }
 
-   #category{
+    #category{
         font-family: var(--font-family);
         padding: 0.5rem;
         border: var(--border);
@@ -195,7 +195,7 @@
         cursor: pointer;
    }
 
-   .blog{
+    .blog{
         background-color: var(--card-color);
         padding: var(--space-lg);
         border-radius: 8px;
@@ -207,16 +207,16 @@
    }
 
 
-   .search-bar input[type="text"]{
+    .search-bar input[type="text"]{
         flex: 1;
         border-radius: 4px;
    }
 
-   .search-bar button{
+    .search-bar button{
         align-self: stretch;
    }
 
-   .hobby-desc{
+    .hobby-desc{
         background-color: var(--card-color);
         padding: var(--space-md);
         border-radius: 8px;
@@ -226,7 +226,7 @@
         flex-direction: column;
    }
 
-   .hobby-desc h3 {
+    .hobby-desc h3 {
         margin-top: 0;
         margin-block-end: 0.5rem;
     }
@@ -247,6 +247,10 @@
         max-inline-size: 60ch;
     }
 
+    .cards{
+        padding-block: 2rem;
+    }
+
     .card-grid{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -255,18 +259,41 @@
         container-name: card-grid-container;
     }
 
-    .card{
-        background-color: var(--card-color);
-        padding: var(--space-lg);
-        align-items: center;
+    @container card-grid-container (min-width: 500px) {
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            background-color: var(--card-color);
+            margin-top: var(--space-lg);
+            padding-inline: var(--space-md);
+            padding-block-start: var(--space-md);
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            box-shadow: var(--box-shadow);
+            max-inline-size: 55ch;
+        }
+
+        .card img {
+            border-top: 4px solid var(--other-accent);
+            border-radius: 8px;
+            max-width: 100%;
+        }
     }
-   
-
-
 }
 
 @layer utilities{
     /* add low level classes for one job with high priority */
+    .callout{
+        color: var(--accent);
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: -1.5rem;
+    }
+
+    .card h3{
+        margin-bottom: -0.7rem;
+    }
 }
 
 @layer overrides{
