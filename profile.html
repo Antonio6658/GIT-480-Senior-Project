@@ -28,38 +28,39 @@
     </header>
     <main>
         <h1>Profile</h1>
-        <section class="settings">
-            <h2>Settings</h2>
-            <form>
-                <label for="name">Username:</label>
-                <input type="text" id="name" name="name">
+        <div class="separator">
+            <section class="settings">
+                <h2>Settings</h2>
+                <form>
+                    <label for="name">Username:</label>
+                    <input type="text" id="name" name="name">
 
-                <label for="desc">Bio:</label>
-                <input type="text" id="desc" name="desc">
+                    <label for="desc">Bio:</label>
+                    <input type="text" id="desc" name="desc">
 
-                <label for="hobby">Hobby Preference:</label>
-                <input type="text" id="hobby" name="hobby">
+                    <label for="hobby">Hobby Preference:</label>
+                    <input type="text" id="hobby" name="hobby">
 
-                <button type="submit">Update</button>
-            </form>
-        </section>
+                    <button type="submit">Update</button>
+                </form>
+            </section>
 
-        <section class="inbox">
-            <h2>Inbox</h2>
-            <form>
-                <label for="usermsg">Sender ID:</label>
-                <input type="text" id="usermsg" name="usermsg">
-                <label for="message">Message:</label>
-                <textarea id="message" rows="3"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-        <!-- if unable to code an accurate inbox message with JS, use href="mailto:" as a short work around. -->
-        <section>
-            <h2>Upcoming Meetings</h2>
-            <div></div>
-        </section>
-        
+            <section class="inbox">
+                <h2>Inbox</h2>
+                <form>
+                    <label for="usermsg">Sender ID:</label>
+                    <input type="text" id="usermsg" name="usermsg">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="3"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+            <!-- if unable to code an accurate inbox message with JS, use href="mailto:" as a short work around. -->
+            <section>
+                <h2>Upcoming Meetings</h2>
+                <div></div>
+            </section>
+        </div>
     </main>
     <footer><p>&copy; Copyright 2026<br>
                 All rights reserved.</p></footer>
