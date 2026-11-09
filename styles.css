@@ -147,6 +147,23 @@
 
 @layer components{
     /* cards styles and other reuseable components */
+    .threads .giscus{
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        padding-block-end: 2rem;
+    }
+
+    .discuss{
+        margin-block: 2rem;
+        background-color: color-mix(in srgb, var(--font-text) 80%, transparent);
+    }
+
+
+    .giscus-frame{
+        transition: height 0.2s ease;
+    }
+
     .settings, .inbox{
         background-color: var(--card-color);
         padding: var(--space-lg);
