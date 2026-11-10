@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
-import { getAuth, signInWithCustomToken } from "firebase/auth";
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+import { getAuth, signInWithCustomToken, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -14,3 +13,15 @@ const firebaseConfig = {
   measurementId: "G-EFHRP9N4TQ"
 };
 
+let app = initializeApp(firebaseConfig);
+let auth = getAuth(app);
+let db = getFirestore(app);
+
+let signupForm = document.getElementById("signup-form");
+signupForm.addEventListener("submit", async (e) =>{
+    e.preventDefault();
+    let email = document.getElementById("signup-email").value;
+    let password = document.getElementById("signup-password").value;
+    
+    
+});
