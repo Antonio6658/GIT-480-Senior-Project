@@ -27,15 +27,15 @@ signupForm.addEventListener("submit", async (e) =>{
     // prevent default submission
     e.preventDefault();
 
-    // store email in variable
+    // store user email in variable
     let email = document.getElementById("signup-email").value;
-    // store password in variable
+    // store user password in variable
     let password = document.getElementById("signup-password").value;
     
 
     // try catch block
     try{
-        // store user credentials in variable
+        // store user credentials in variable communicate with firebase
         let userCredential = await createUserWithEmailAndPassword(auth, email, password);
         let user = userCredential.user;
 
@@ -51,7 +51,7 @@ signupForm.addEventListener("submit", async (e) =>{
         alert("User info created");
     }
 
-    // error message catch block
+    // error message catch block shows firebase error
     catch(error){
         console.error(error);
     }
