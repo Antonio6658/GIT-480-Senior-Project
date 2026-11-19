@@ -53,4 +53,37 @@ function runSearch(event) {
     resultsContainer.innerHTML = "<p>Please search for a hobby</p>";
     return;
   }
+
+// temporary holding variable for matching hobbies
+  let html = "";
+
+// loops through hobbies and creates html elements for matching titles
+  for (let hobby of hobbies) {
+    // checks if the hobby title includes user's search query
+    if (hobby.title.toLowerCase().includes(userQuery)) {
+      html += `
+        <div class="hobby-card">
+          <img src="${hobby.image}" alt="${hobby.title}">
+          <div class="hobby-info">
+            <h3>${hobby.title}</h3>
+            <p>${hobby.description}</p>
+            <div class="mentors">Mentors: ${hobby.mentors.join(", ")}</div>
+          </div>
+        </div>`;
+    }
+  }
+
+// displays error message if no hobbies match, otherwise displays hobby info
+  if (html === "") {
+    resultsContainer.innerHTML = "<p>No hobbies found matching your search.</p>";
+  } else {
+    resultsContainer.innerHTML = html;
+  }
 }
+
+// listens for user clicking the search button or pressing enter then runs the function
+searchButton.addEventListener("click", runSearch);
+searchInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") runSearch(event);
+});
+
