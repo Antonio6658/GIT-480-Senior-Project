@@ -37,3 +37,20 @@ let hobbies = [
     }
 ];
 
+// variables to store the search input, search button, and results container
+let searchInput = document.querySelector(".search-bar input");
+let searchButton = document.getElementById("search");
+let resultsContainer = document.querySelector(".search-results");
+
+// search function declaration
+function runSearch(event) {
+// prevents the page from refreshing when the search button is clicked
+  if (event) event.preventDefault();
+
+// trims user input, converts to lowercase, and checks for a blank search block
+  let userQuery = searchInput.value.toLowerCase().trim();
+  if(userQuery === ""){
+    resultsContainer.innerHTML = "<p>Please search for a hobby</p>";
+    return;
+  }
+}
