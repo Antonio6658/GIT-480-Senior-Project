@@ -260,20 +260,34 @@
         font-size: 0.95rem; 
     }
 
-    .intro-desc{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-block: 4rem;
+    .intro-desc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem;
+        gap: 2rem;
         border-bottom: var(--border);
     }
 
-    .mission p{
-        max-inline-size: 60ch;
+    .mission-image {
+        flex: 1 1 50%;
     }
 
-    
+    .mission p{
+        flex: 1 1 50%;
+    }
 
-
+    .mission-image img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center ;
+        border-radius: 12px;
+        display: block;
+        border: red;
+    }
 
     .separator{
         padding-block-start: var(--space-lg);
@@ -348,3 +362,13 @@
   } */
 }
 
+@media (max-width: 350px) {
+    .intro-desc {
+        flex-direction: column;
+    }
+
+    .mission-image,
+    .mission {
+        width: 100%;
+    }
+}
