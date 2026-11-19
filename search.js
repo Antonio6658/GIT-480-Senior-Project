@@ -62,6 +62,27 @@ function showSuggestions() {
         suggestResult.style.display = "none";
         return;
     }
+    // blank variable for displaying the drop down suggestion for the user search
+    let suggestHTML = "";
+
+    // for loop that searches registered hobbies to show the user one that may match
+    for (let hobby of hobbies) {
+        if(hobby.title.toLowerCase().includes(userQuery)){
+            // shows user matching hobby, added a class to style the div in css
+            suggestHTML += `<div class="suggestion">${hobby.title}</div>`;
+        }
+    }
+
+    // if there is no result hide drop down suggest
+    if (suggestHTML === ""){
+        suggestResult.innerHTML = "";
+        suggestResult.style.display = "none";
+    }
+    // if one hobby matches, show result to user
+    else{
+        suggestResult.innerHTML = suggestHTML;
+        suggestResult.style.display = "block";
+    }
 }
 
 // search function declaration
@@ -69,6 +90,9 @@ function runSearch(event) {
 // prevents the page from refreshing when the search button is clicked
     if (event) event.preventDefault();
 
+    // hide dropdown when search is submitted
+    suggestResult.style.display = "none";
+    
 // trims user input, converts to lowercase, and checks for a blank search block
     let userQuery = searchInput.value.toLowerCase().trim();
     if(userQuery === ""){
@@ -101,6 +125,17 @@ function runSearch(event) {
         resultsContainer.innerHTML = html;
   }
 }
+
+// if user clicks suggestion result, fill input and run search function
+suggestResult.addEventListener("click", (event) =>{
+    if (event.target.classList.contains("suggestion")){
+        searchInput.value = event.target.textContent;
+        runSearch();
+    }
+});
+
+// event listener for typing and showing suggestions
+searchInput.addEventListener("input", showSuggestions);
 
 // listens for user clicking the search button or pressing enter then runs the function
 searchButton.addEventListener("click", runSearch);
