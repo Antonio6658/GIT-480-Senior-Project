@@ -34,6 +34,13 @@ let hobbies = [
         description: "On paper or digital canvas, making creative images by using various techniques to showcase a person's talent and skill.",
         // will replace with actual registered mentors and their profile info
         mentors: ["N/A"]
+    },
+    {
+        title: "Gym/Working Out",
+        image: "images/hiking.jpg",
+        description: "Expression by exercising. This can include a wide range of hobbies, such as going to the gym, going on hikes, swimming, or any other physical hobby",
+        // will replace with actual registered mentors and their profile info
+        mentors: ["N/A"]
     }
 ];
 
@@ -42,48 +49,61 @@ let searchInput = document.querySelector(".search-bar input");
 let searchButton = document.getElementById("search");
 let resultsContainer = document.querySelector(".search-results");
 
+// suggestions drop down variable
+let suggestResult = document.querySelector(".suggest");
+
+// function for displaying matching results as user types
+function showSuggestions() {
+    let userQuery = searchInput.value.toLowerCase().trim();
+
+    // hide if no matches
+    if(userQuery === ""){
+        suggestResult.innerHTML = "";
+        suggestResult.style.display = "none";
+        return;
+    }
+}
+
 // search function declaration
 function runSearch(event) {
 // prevents the page from refreshing when the search button is clicked
-  if (event) event.preventDefault();
+    if (event) event.preventDefault();
 
 // trims user input, converts to lowercase, and checks for a blank search block
-  let userQuery = searchInput.value.toLowerCase().trim();
-  if(userQuery === ""){
-    resultsContainer.innerHTML = "<p>Please search for a hobby</p>";
-    return;
+    let userQuery = searchInput.value.toLowerCase().trim();
+    if(userQuery === ""){
+        resultsContainer.innerHTML = "<p>Please search for a hobby</p>";
+        return;
   }
 
 // temporary holding variable for matching hobbies
-  let html = "";
+    let html = "";
 
 // loops through hobbies and creates html elements for matching titles
-  for (let hobby of hobbies) {
+    for (let hobby of hobbies) {
     // checks if the hobby title includes user's search query
     if (hobby.title.toLowerCase().includes(userQuery)) {
-      html += `
-        <div class="hobby-card">
-          <img src="${hobby.image}" alt="${hobby.title}">
-          <div class="hobby-info">
-            <h3>${hobby.title}</h3>
-            <p>${hobby.description}</p>
-            <div class="mentors">Mentors: ${hobby.mentors.join(", ")}</div>
-          </div>
+        html += `<div class="hobby-card">
+                 <img src="${hobby.image}" alt="${hobby.title}">
+                 <div class="hobby-info">
+                 <h3>${hobby.title}</h3>
+                 <p>${hobby.description}</p>
+                 <div class="mentors">Mentors: ${hobby.mentors.join(", ")}</div>
+        </div>
         </div>`;
     }
   }
 
 // displays error message if no hobbies match, otherwise displays hobby info
-  if (html === "") {
-    resultsContainer.innerHTML = "<p>No hobbies found matching your search.</p>";
-  } else {
-    resultsContainer.innerHTML = html;
+    if (html === "") {
+        resultsContainer.innerHTML = "<p>No hobbies found matching your search.</p>";
+    }else {
+        resultsContainer.innerHTML = html;
   }
 }
 
 // listens for user clicking the search button or pressing enter then runs the function
 searchButton.addEventListener("click", runSearch);
 searchInput.addEventListener("keyup", (event) => {
-  if (event.key === "Enter") runSearch(event);
+    if (event.key === "Enter") runSearch(event);
 });
-
