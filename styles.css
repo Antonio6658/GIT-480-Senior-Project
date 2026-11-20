@@ -177,7 +177,6 @@
     }
 
 
-
     .settings form, .inbox form { 
         display: flex;
         flex-direction: column;
@@ -199,7 +198,7 @@
    }
 
     .button, button{
-        font-family: var(heading);
+        font-family: var(--heading);
         font-weight: bold;
         background-color: var(--primary);
         color: var(--card-color);
@@ -261,38 +260,40 @@
     }
 
     .intro-desc {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         margin: 0 auto;
-        padding: 3rem;
-        gap: 5rem;
+        
+        padding: var(--space-lg);
         border-bottom: var(--border);
+        background-image: url("images/hero-img.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
     }
 
-    .mission-image {
-        flex: 1 1 50%;
+    .mission {
+        background-color: color-mix(in srgb, var(--background) 90%, transparent);
+        max-width: 900px;
+        margin: 0 auto;
+        padding: var(--space-sm);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mission h2, .mission .button, .mission p{
+        align-self: center;
     }
 
     .mission p{
-        flex: 1 1 50%;
-    }
-
-    .mission-image img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        object-position: center ;
-        border-radius: 12px;
-        display: block;
-        border: red;
+        text-align: left;
+        margin: 0;
     }
 
     .separator{
         padding-block-start: var(--space-lg);
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-        gap: 5rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .cards{
@@ -359,15 +360,4 @@
             color: #000 !important;
             background-color: #fff !important;
   } */
-}
-
-@media (max-width: 350px) {
-    .intro-desc {
-        flex-direction: column;
-    }
-
-    .mission-image,
-    .mission {
-        width: 100%;
-    }
 }
