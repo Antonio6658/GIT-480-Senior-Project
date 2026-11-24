@@ -261,7 +261,6 @@
 
     .intro-desc {
         margin: 0 auto;
-        
         padding: var(--space-lg);
         border-bottom: var(--border);
         background-image: url("images/hero-img.jpg");
@@ -306,6 +305,32 @@
         gap: var(--space-sm);
         container-type: inline-size;
         container-name: card-grid-container;
+    }
+
+    /* SEARCH BAR STYLES */
+
+    .suggest{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-color);
+        border: 1px solid var(--background);
+        border-top: none;
+        box-shadow: 0 4px 6px var(--font-text);
+        z-index: 1000;
+        font-family: var(--font-family);
+        font-size: var(--space-md);
+    }
+
+    .suggestion {
+        padding: var(--space-md);
+        cursor: pointer;
+    }
+
+    .suggestion:hover{
+        background-color: #f0f0f0;
     }
 
     @container card-grid-container (min-width: 500px) {
